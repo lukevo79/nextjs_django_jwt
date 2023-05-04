@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Link from 'next/link'
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,32 +17,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex flex-col h-screen">
-          <div className="bg-neutral-400 flex items-center justify-center h-24 text-3xl font-sans font-semibold tracking-wide">
-            Test JWT Auth
+        <div className='w-full h-screen flex flex-col'>
+          <div className='bg-zinc-300 h-8 flex items-center py-2'>
+            <Image src="/LogoCV_128.png" alt="logoCV" width="24" height="24"></Image>
+            <span className='text-sm text-zinc-700 font-semibold py-1 px-2 mx-2 rounded-lg hover:bg-sky-600 hover:text-zinc-300'>Home</span>
+            <div className='grow items-center'></div>
+            <span className='text-sm text-zinc-700 font-semibold py-1 px-2 mx-2 rounded-lg hover:bg-sky-600 hover:text-zinc-300'>Sign-Ins</span>
           </div>
-          <div className="bg-neutral-500">
-            <div className='hover:bg-neutral-400 px-2 my-1 rounded-md block float-left'>
-              <Link href='/' className='font-medium text-sm text-neutral-800'>Home</Link>
+          <div className='flex h-full'>
+            <div className='bg-zinc-900 w-44'>
+              Left Bar
             </div>
-            <div className='hover:bg-neutral-400 px-2 my-1 rounded-md block float-left'>
-              <Link  href='#' className='font-medium text-sm text-neutral-800'>Test 2</Link >
-            </div>
-            <div className='hover:bg-neutral-400 px-2 my-1 rounded-md block float-right'>
-              <Link  href='/login/' className='font-medium text-sm text-neutral-800 '>Login</Link >
-            </div>
-          </div>
-          <div className="flex grow">
-            <div className="bg-neutral-950 min-w-[200px]">Sidebar</div>
-            <div className="bg-neutral-200 grow py-1 px-2">
-              {children}
+            <div className='bg-zinc-50 grow'>
+            { children }
             </div>
           </div>
-          <div className="bg-neutral-500">
+          <div className='bg-zinc-400'>
             Footer
           </div>
         </div>
-        </body>
+      </body>
     </html>
   )
 }
