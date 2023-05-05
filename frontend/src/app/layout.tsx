@@ -26,7 +26,7 @@ export default function RootLayout({
           </div>
           <div className='flex h-full'>
             <div className='bg-zinc-900 w-44'>
-              Left Bar
+              Left
             </div>
             <div className='bg-zinc-50 grow'>
             { children }
